@@ -1,0 +1,301 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>fitcircle &#8212; GMT模块手册</title>
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.base.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="gmt" href="../gmt/" />
+    <link rel="prev" title="filter1d" href="../filter1d/" />
+ 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- favicons -->
+
+<link rel="shortcut icon" href="_static/favicon.ico" type="image/x-icon" type="image/png" />
+
+<!-- Opera Speed Dial Icon -->
+<link rel="icon" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+
+<!-- Safari on iOS -->
+<link rel="apple-touch-icon" href="_static/apple-touch-icon.png"  type="image/png" />
+<link rel="apple-touch-icon" sizes="57x57" href="_static/apple-touch-icon-57x57.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="72x72" href="_static/apple-touch-icon-72x72.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="76x76" href="_static/apple-touch-icon-76x76.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="114x114" href="_static/apple-touch-icon-114x114.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="120x120" href="_static/apple-touch-icon-120x120.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="144x144" href="_static/apple-touch-icon-144x144.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="152x152" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="180x180" href="_static/apple-touch-icon-180x180.png" type="image/png" />
+
+<!-- For tiles on Windows -->
+<meta name="msapplication-TileImage" content="_static/apple-touch-icon-114x114.png"/>
+<meta name="msapplication-TileColor" content="#d83434"/>
+
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../gmt/" title="gmt"
+             accesskey="N">下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../filter1d/" title="filter1d"
+             accesskey="P">上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+    <div class="documentwrapper"><div class="bodywrapper">
+        <div class="body" role="main">
+            
+  <div class="section" id="fitcircle">
+<span id="index-0"></span><h1>fitcircle<a class="headerlink" href="#fitcircle" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/fitcircle.html" title="(在 GMT v5.4.5)"><span>fitcircle</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">拟合球面上数据点的平均位置及圆弧</td>
+</tr>
+</tbody>
+</table>
+<p>该命令从输入数据的前两列读取经纬度数据，将其转换为单位球面上的笛卡尔三维矢量，然后计算输入坐标数据的平均位置以及可以拟合这些坐标点的大圆路径的pole。</p>
+<div class="section" id="id1">
+<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code></dt>
+<dd>输入数据</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">-L&lt;norm&gt;</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">-L1</span></code> 解法1</li>
+<li><code class="docutils literal notranslate"><span class="pre">-L2</span></code> 解法2</li>
+<li><code class="docutils literal notranslate"><span class="pre">-L</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-L3</span></code> 同时输出解法1和解法2的结果</li>
+</ul>
+<p>在计算输入坐标的均值和大圆弧pole时有两种计算方法，分别用 <code class="docutils literal notranslate"><span class="pre">-L1</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-L2</span></code>
+表示。当数据沿着某个大圆弧且距离接近时，两组解结果相似。若数据较分散，则大圆弧的pole要比均值不精确得多。此时可以比较两组结果以作为相互的验证。</p>
+<p>The <strong>-L1</strong> solution is so called because it approximates the
+minimization of the sum of absolute values of cosines of angular
+distances. This solution finds the mean position as the Fisher average
+of the data, and the pole position as the Fisher average of the
+cross-products between the mean and the data. Averaging cross-products
+gives weight to points in proportion to their distance from the mean,
+analogous to the “leverage” of distant points in linear regression in the plane.</p>
+<p>The <strong>-L2</strong> solution is so called because it approximates the
+minimization of the sum of squares of cosines of angular distances. It
+creates a 3 by 3 matrix of sums of squares of components of the data
+vectors. The eigenvectors of this matrix give the mean and pole
+locations. This method may be more subject to roundoff errors when there
+are thousands of data. The pole is given by the eigenvector
+corresponding to the smallest eigenvalue; it is the least-well
+represented factor in the data and is not easily estimated by either method.</p>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-Ff|m|n|s|c</span></code></dt>
+<dd><p class="first">控制输出格式。</p>
+<p>正常情况下，该命令会将计算结果以较复杂的形式输出。使用 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项，则只返回简单的坐标。 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 后可以加上其他修饰符以指定要返回的坐标：</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">f</span></code> Flat Earth mean location</li>
+<li><code class="docutils literal notranslate"><span class="pre">m</span></code> mean location</li>
+<li><code class="docutils literal notranslate"><span class="pre">n</span></code> north pole of great circle</li>
+<li><code class="docutils literal notranslate"><span class="pre">s</span></code> south pole of great circle</li>
+<li><code class="docutils literal notranslate"><span class="pre">c</span></code> pole of small circle and its colatitude, which requires <code class="docutils literal notranslate"><span class="pre">-S</span></code></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-S[&lt;lat&gt;]</span></code></dt>
+<dd><p class="first">拟合小圆弧而不是大圆弧</p>
+<p class="last">The pole will be constrained to lie on the great circle connecting the pole
+of the best-fit great circle and the mean location of the data.
+Optionally append the desired fixed latitude of the small circle
+[Default will determine the latitude].</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>如下命令，用两种计算方法拟合了数据的大圆弧路径和小圆弧路径，并借助 <a class="reference internal" href="../project/"><span class="doc">project</span></a>
+生成路径坐标。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1"># test/fitcircle/circles.sh</span>
+<span class="c1">#</span>
+<span class="c1"># Tests gmt fitcircle on spherical data points</span>
+
+<span class="nv">ps</span><span class="o">=</span>fitcircle_ex1.ps
+
+<span class="c1"># Fit great circle to red points and small circle to green points</span>
+<span class="c1"># Plot the best-fitting great and small circles as well as the</span>
+<span class="c1"># location of the mean locations and pole locations for both</span>
+<span class="c1"># the -L1 and -L2 options (i.e., -L3).</span>
+
+gmt fitcircle gcircle.txt -L3 &gt; g.txt
+gmt fitcircle scircle.txt -L3 -S &gt; s.txt
+<span class="nv">gpole1</span><span class="o">=</span><span class="sb">`</span>grep <span class="s2">&quot;L1 N Hemisphere&quot;</span> g.txt <span class="p">|</span> gawk <span class="s1">&#39;{printf &quot;%s/%s\n&quot;, $1, $2}&#39;</span><span class="sb">`</span>
+<span class="nv">gpole2</span><span class="o">=</span><span class="sb">`</span>grep <span class="s2">&quot;L2 N Hemisphere&quot;</span> g.txt <span class="p">|</span> gawk <span class="s1">&#39;{printf &quot;%s/%s\n&quot;, $1, $2}&#39;</span><span class="sb">`</span>
+<span class="nv">spole1</span><span class="o">=</span><span class="sb">`</span>grep <span class="s2">&quot;L1 Small Circle Pole&quot;</span> s.txt <span class="p">|</span> gawk <span class="s1">&#39;{printf &quot;%s/%s\n&quot;, $1, $2}&#39;</span><span class="sb">`</span>
+<span class="nv">spole2</span><span class="o">=</span><span class="sb">`</span>grep <span class="s2">&quot;L2 Small Circle Pole&quot;</span> s.txt <span class="p">|</span> gawk <span class="s1">&#39;{printf &quot;%s/%s\n&quot;, $1, $2}&#39;</span><span class="sb">`</span>
+<span class="nv">slat1</span><span class="o">=</span><span class="sb">`</span>grep <span class="s2">&quot;L1 Small Circle&quot;</span> s.txt <span class="p">|</span> gawk <span class="s1">&#39;{print 90-$NF}&#39;</span><span class="sb">`</span>
+<span class="nv">slat2</span><span class="o">=</span><span class="sb">`</span>grep <span class="s2">&quot;L2 Small Circle&quot;</span> s.txt <span class="p">|</span> gawk <span class="s1">&#39;{print 90-$NF}&#39;</span><span class="sb">`</span>
+gmt psxy -Rg -JG-30/40/7i -P -Bg -K gcircle.txt -Sc0.04i -Gred -Xc -Yc &gt; <span class="nv">$ps</span>
+gmt psxy -R -J -O -K scircle.txt -Sc0.04i -Ggreen &gt;&gt; <span class="nv">$ps</span>
+gmt project -G1 -T<span class="nv">$gpole1</span> -L-180/180 <span class="p">|</span> gmt psxy -R -J -O -K -W3p &gt;&gt; <span class="nv">$ps</span>
+gmt project -G1 -T<span class="nv">$gpole2</span> -L-180/180 <span class="p">|</span> gmt psxy -R -J -O -K -W1p,- &gt;&gt; <span class="nv">$ps</span>
+gmt project -G1/<span class="nv">$slat1</span> -T<span class="nv">$spole1</span> -L-180/180 <span class="p">|</span> gmt psxy -R -J -O -K -W3p &gt;&gt; <span class="nv">$ps</span>
+gmt project -G1/<span class="nv">$slat2</span> -T<span class="nv">$spole2</span> -L-180/180 <span class="p">|</span> gmt psxy -R -J -O -K -W1p,- &gt;&gt; <span class="nv">$ps</span>
+grep <span class="s2">&quot;Great Circle Pole&quot;</span> g.txt <span class="p">|</span> gmt psxy -R -J -O -K -Sa0.2i -Gred -W0.25p &gt;&gt; <span class="nv">$ps</span>
+grep <span class="s2">&quot;Small Circle Pole&quot;</span> s.txt <span class="p">|</span> gmt psxy -R -J -O -K -Sa0.2i -Ggreen -W0.25p &gt;&gt; <span class="nv">$ps</span>
+grep <span class="s2">&quot;L1 Average&quot;</span> g.txt <span class="p">|</span> gmt psxy -R -J -O -K -Sa0.2i -Gyellow -W0.25p &gt;&gt; <span class="nv">$ps</span>
+grep <span class="s2">&quot;L2 Average&quot;</span> g.txt <span class="p">|</span> gmt psxy -R -J -O -K -Sa0.2i -Gyellow -W0.25p &gt;&gt; <span class="nv">$ps</span>
+grep <span class="s2">&quot;L1 Average&quot;</span> s.txt <span class="p">|</span> gmt psxy -R -J -O -K -Sa0.2i -Gyellow -W0.25p &gt;&gt; <span class="nv">$ps</span>
+grep <span class="s2">&quot;L2 Average&quot;</span> s.txt <span class="p">|</span> gmt psxy -R -J -O -K -Sa0.2i -Gyellow -W0.25p &gt;&gt; <span class="nv">$ps</span>
+gmt psxy -R -J -O -T &gt;&gt; <span class="nv">$ps</span>
+rm g.txt s.txt gmt.*
+</pre></div>
+</div>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/fitcircle_ex1.png"><img alt="../_images/fitcircle_ex1.png" src="../_images/fitcircle_ex1.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">fitcircle示例</span></p>
+</div>
+</div>
+</div>
+
+
+            <!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0bb569c4f33dd7e46968',
+    clientSecret: '3e8f81a18b43373c4eb24e82f34f34415f8b79be',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    body: location.href,
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+        </div></div>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../">目录</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">fitcircle</a><ul>
+<li><a class="reference internal" href="#id1">必选选项</a></li>
+<li><a class="reference internal" href="#id2">选项</a></li>
+<li><a class="reference internal" href="#id3">示例</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div class="sphinxprev">
+    <h4>上一页</h4>
+    <p class="topless"><a href="../filter1d/"
+                          title="上一页">&larr; filter1d</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>下一页</h4>
+    <p class="topless"><a href="../gmt/"
+                          title="下一页">&rarr; gmt</a></p>
+  </div>
+  <h3>本页</h3>
+  <ul class="this-page-menu">
+    <li><a href="https://github.com/gmt-china/GMT_modules/blob/master/source/fitcircle.rst"
+           rel="nofollow">Show on GitHub</a></li>
+    <li><a href="https://github.com/gmt-china/GMT_modules/edit/master/source/fitcircle.rst"
+           rel="nofollow">Edit on GitHub</a></li>
+  </ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search/" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../gmt/" title="gmt"
+             >下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../filter1d/" title="filter1d"
+             >上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; 版权所有 2014-2018, GMT中文社区.
+      最后更新于 2019年01月05日.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2 创建。
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

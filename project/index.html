@@ -1,0 +1,279 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>project &#8212; GMT模块手册</title>
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.base.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="psbasemap" href="../psbasemap/" />
+    <link rel="prev" title="originator" href="../originator/" />
+ 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- favicons -->
+
+<link rel="shortcut icon" href="_static/favicon.ico" type="image/x-icon" type="image/png" />
+
+<!-- Opera Speed Dial Icon -->
+<link rel="icon" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+
+<!-- Safari on iOS -->
+<link rel="apple-touch-icon" href="_static/apple-touch-icon.png"  type="image/png" />
+<link rel="apple-touch-icon" sizes="57x57" href="_static/apple-touch-icon-57x57.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="72x72" href="_static/apple-touch-icon-72x72.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="76x76" href="_static/apple-touch-icon-76x76.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="114x114" href="_static/apple-touch-icon-114x114.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="120x120" href="_static/apple-touch-icon-120x120.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="144x144" href="_static/apple-touch-icon-144x144.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="152x152" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="180x180" href="_static/apple-touch-icon-180x180.png" type="image/png" />
+
+<!-- For tiles on Windows -->
+<meta name="msapplication-TileImage" content="_static/apple-touch-icon-114x114.png"/>
+<meta name="msapplication-TileColor" content="#d83434"/>
+
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../psbasemap/" title="psbasemap"
+             accesskey="N">下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../originator/" title="originator"
+             accesskey="P">上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+    <div class="documentwrapper"><div class="bodywrapper">
+        <div class="body" role="main">
+            
+  <div class="section" id="project">
+<span id="index-0"></span><h1>project<a class="headerlink" href="#project" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/project.html" title="(在 GMT v5.4.5)"><span>project</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">将数据点投影到线或大圆路径上，生成测线，坐标转换</td>
+</tr>
+</tbody>
+</table>
+<p>不管是要生成测线还是要将数据投影到测线上，首先要定义测线。</p>
+<p>测线可以用如下三种方式中的任意一种来定义：</p>
+<ol class="arabic simple">
+<li>用 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项定义测线的起点，并用 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 定义测线方位角</li>
+<li>用 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项定义测线的起点，并用 <code class="docutils literal notranslate"><span class="pre">-E</span></code> 选项定义测线的结束点</li>
+<li>用 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项定义测线的中心，并用 <code class="docutils literal notranslate"><span class="pre">-T</span></code> 选项定义rotation pole的位置</li>
+</ol>
+<p>在指定测线后，该命令可以将输入的 (x, y) 数据投影到该测线上，默认的输出格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>x  y   z   p   q   r   s
+</pre></div>
+</div>
+<p>其中：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 是数据在原坐标系下的位置，</li>
+<li><code class="docutils literal notranslate"><span class="pre">z</span></code> 是输入数据中的其余所有列</li>
+<li><code class="docutils literal notranslate"><span class="pre">p</span></code> 和 <code class="docutils literal notranslate"><span class="pre">q</span></code> 是数据 (x,y) 在测线坐标系下的位置</li>
+<li><code class="docutils literal notranslate"><span class="pre">r</span></code> 和 <code class="docutils literal notranslate"><span class="pre">s</span></code> 是测线上与(x,y)最近的点在XY坐标系下的坐标</li>
+</ul>
+<p>关于测线坐标系，在指定了测线后，会创建一个倾斜的坐标系。该倾斜坐标系的赤道线沿着测线，零经度线则穿过测线的中心，此时 <code class="docutils literal notranslate"><span class="pre">p</span></code> 是倾斜坐标系下的经度， <code class="docutils literal notranslate"><span class="pre">q</span></code>
+是倾斜坐标系下的纬度。</p>
+<div class="section" id="id1">
+<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;cx&gt;/&lt;cy&gt;</span></code></dt>
+<dd>对于定义1和2而言，该选项指定测线的起点坐标；对于定义3而言，该选项指定了旋转坐标下零经线所穿过的点</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-A&lt;azimuth&gt;</span></code></dt>
+<dd>定义1中用于指定测线的方位角</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-E&lt;bx&gt;/&lt;by&gt;</span></code></dt>
+<dd>定义2中用于指定测线的终点</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-F&lt;flags&gt;</span></code></dt>
+<dd><p class="first">指定输出格式， <code class="docutils literal notranslate"><span class="pre">flags</span></code> 可以是 <code class="docutils literal notranslate"><span class="pre">xyzpqrs</span></code> 的任意组合。</p>
+<p class="last">默认输出格式为 <code class="docutils literal notranslate"><span class="pre">xyzpqrs</span></code> 。若使用 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项，则输出格式为 <code class="docutils literal notranslate"><span class="pre">rsp</span></code></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;dist&gt;[/&lt;colat&gt;][+h]</span></code></dt>
+<dd><p class="first">生成测线模式。</p>
+<p>该选项用于生成测线，此时不需要输入文件。 <code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code> 的单位规定见 <code class="docutils literal notranslate"><span class="pre">-Q</span></code> 选项。输出数据有三列：经度、纬度以及当前点离测线起点的距离。默认情况下，会按照大圆路径生成测线，当使用定义2
+指定测线的两个端点时，可以通过指定 <code class="docutils literal notranslate"><span class="pre">&lt;colat&gt;</span></code> 来生成小圆。</p>
+<p class="last">若使用 <code class="docutils literal notranslate"><span class="pre">+h</span></code> 则会在段头记录中报告pole的位置。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-L[w][&lt;l_min&gt;/&lt;l_max&gt;]</span></code></dt>
+<dd>仅坐标 <code class="docutils literal notranslate"><span class="pre">p</span></code> 在 <code class="docutils literal notranslate"><span class="pre">&lt;l_min&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;l_max&gt;</span></code> 之间的数据会被投影到测线上。
+<code class="docutils literal notranslate"><span class="pre">&lt;l_min&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;l_max&gt;</span></code> 的单位规定见 <code class="docutils literal notranslate"><span class="pre">-Q</span></code> 选项。如果是负数则表示反方向的数据范围。若使用了 <code class="docutils literal notranslate"><span class="pre">-E</span></code> 选项，则可以使用 <code class="docutils literal notranslate"><span class="pre">-Lw</span></code> 来限制只绘制能投影到测线起点和终点之间的数据。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N</span></code></dt>
+<dd>Flat Earth。在平面内使用笛卡尔坐标变换。默认使用球面三角。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Q</span></code></dt>
+<dd>使用地图单位。即投影假设x、y、r、s 的单位是弧度，p、q、 <code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code> 、
+<code class="docutils literal notranslate"><span class="pre">&lt;l_min&gt;</span></code> 、 <code class="docutils literal notranslate"><span class="pre">&lt;l_max&gt;</span></code> 、 <code class="docutils literal notranslate"><span class="pre">&lt;w_min&gt;</span></code> 、 <code class="docutils literal notranslate"><span class="pre">&lt;w_max&gt;</span></code> 的单位是千米。若不使用该选项，则所有量都假设为相同的单位。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-S</span></code></dt>
+<dd>将输出按照 <code class="docutils literal notranslate"><span class="pre">p</span></code> 增序排列。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-T&lt;px&gt;/&lt;py&gt;</span></code></dt>
+<dd>定义3中用于指定rotation pole的位置</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-W&lt;w_min&gt;/&lt;w_max&gt;</span></code></dt>
+<dd>仅坐标 <code class="docutils literal notranslate"><span class="pre">q</span></code> 在 <code class="docutils literal notranslate"><span class="pre">&lt;w_min&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;w_max&gt;</span></code> 范围内的数据才会被投影到测线上。</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>指定测线的起点和终点，在测线上每隔10千米生成一个点:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt project -C-50/10 -E-10/30 -G10 -Q &gt; great_circle_points.xyp
+</pre></div>
+</div>
+<p>指定测线的起点和终点，沿着colatitude=60的小圆上，每隔10千米生成一个点:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt project -C-50/10 -E-10/30 -G10/60 -Q &gt; small_circle_points.xyp
+</pre></div>
+</div>
+<p>利用 -F 选项指定输出哪些坐标来得到某点在某测线上的投影点:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">102</span> <span class="m">30</span> <span class="p">|</span> gmt project -C103/31 -A225 -L0/500 -Frs -Q
+</pre></div>
+</div>
+<p>已知某点，根据方位角和大圆距离计算另一点。已知一点(120, 25)，根据方位角 45 度，大圆距离 123 千米的点位置</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt project -C120/25 -A45 -L0/123 -G123 -Q <span class="p">|</span> tail -1
+</pre></div>
+</div>
+</div>
+</div>
+
+
+            <!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0bb569c4f33dd7e46968',
+    clientSecret: '3e8f81a18b43373c4eb24e82f34f34415f8b79be',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    body: location.href,
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+        </div></div>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../">目录</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">project</a><ul>
+<li><a class="reference internal" href="#id1">必选选项</a></li>
+<li><a class="reference internal" href="#id2">可选选项</a></li>
+<li><a class="reference internal" href="#id3">示例</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div class="sphinxprev">
+    <h4>上一页</h4>
+    <p class="topless"><a href="../originator/"
+                          title="上一页">&larr; originator</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>下一页</h4>
+    <p class="topless"><a href="../psbasemap/"
+                          title="下一页">&rarr; psbasemap</a></p>
+  </div>
+  <h3>本页</h3>
+  <ul class="this-page-menu">
+    <li><a href="https://github.com/gmt-china/GMT_modules/blob/master/source/project.rst"
+           rel="nofollow">Show on GitHub</a></li>
+    <li><a href="https://github.com/gmt-china/GMT_modules/edit/master/source/project.rst"
+           rel="nofollow">Edit on GitHub</a></li>
+  </ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search/" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../psbasemap/" title="psbasemap"
+             >下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../originator/" title="originator"
+             >上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; 版权所有 2014-2018, GMT中文社区.
+      最后更新于 2019年01月05日.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2 创建。
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

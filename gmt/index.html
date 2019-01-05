@@ -1,0 +1,220 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>gmt &#8212; GMT模块手册</title>
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.base.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="gmt-config" href="../gmt-config/" />
+    <link rel="prev" title="fitcircle" href="../fitcircle/" />
+ 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- favicons -->
+
+<link rel="shortcut icon" href="_static/favicon.ico" type="image/x-icon" type="image/png" />
+
+<!-- Opera Speed Dial Icon -->
+<link rel="icon" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+
+<!-- Safari on iOS -->
+<link rel="apple-touch-icon" href="_static/apple-touch-icon.png"  type="image/png" />
+<link rel="apple-touch-icon" sizes="57x57" href="_static/apple-touch-icon-57x57.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="72x72" href="_static/apple-touch-icon-72x72.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="76x76" href="_static/apple-touch-icon-76x76.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="114x114" href="_static/apple-touch-icon-114x114.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="120x120" href="_static/apple-touch-icon-120x120.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="144x144" href="_static/apple-touch-icon-144x144.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="152x152" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="180x180" href="_static/apple-touch-icon-180x180.png" type="image/png" />
+
+<!-- For tiles on Windows -->
+<meta name="msapplication-TileImage" content="_static/apple-touch-icon-114x114.png"/>
+<meta name="msapplication-TileColor" content="#d83434"/>
+
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../gmt-config/" title="gmt-config"
+             accesskey="N">下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../fitcircle/" title="fitcircle"
+             accesskey="P">上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+    <div class="documentwrapper"><div class="bodywrapper">
+        <div class="body" role="main">
+            
+  <div class="section" id="gmt">
+<span id="index-0"></span><h1>gmt<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/gmt.html" title="(在 GMT v5.4.5)"><span>gmt</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">说明:</th><td class="field-body">GMT的主程序，也是GMT5中唯一的一个二进制文件，GMT的所有模块都需要通过该命令调用</td>
+</tr>
+</tbody>
+</table>
+<p>GMT的所有功能通过如下语法调用:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt &lt;module&gt; &lt;module-options&gt;
+</pre></div>
+</div>
+<p>其中， <code class="docutils literal notranslate"><span class="pre">&lt;module&gt;</span></code> 是GMT模块名， <code class="docutils literal notranslate"><span class="pre">&lt;module-options&gt;</span></code> 是模块所支持的选项。</p>
+<p>比如，想要调用GMT的psbasemap模块:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -JX10c/10c -R0/20/0/5 -Bafg &gt; test.ps
+</pre></div>
+</div>
+<p>gmt还提供了一个特殊的模块，名为 <code class="docutils literal notranslate"><span class="pre">clear</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt clear history<span class="p">|</span>conf<span class="p">|</span>cache<span class="p">|</span>all
+</pre></div>
+</div>
+<ul class="simple">
+<li><cite>gmt clear history</cite>: 删除当前目录下的 <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> 文件</li>
+<li><cite>gmt clear conf</cite>: 删除当前目录下的 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> 文件</li>
+<li><cite>gmt clear cache</cite>: 删除用户目录（ <code class="docutils literal notranslate"><span class="pre">~/.gmt</span></code> ）下的缓存文件夹</li>
+<li><cite>gmt clear all</cite>: 清理 history、conf 和 cache</li>
+</ul>
+<p>除此之外，还有一些其他选项可以使用：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--help</span></code> ：列出GMT提供的所有模块名及其功能</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--version</span></code> ：显示GMT版本</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-bindir</span></code> ：显示GMT的bin目录</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-datadir</span></code> ：显示GMT的数据目录，默认为空</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-sharedir</span></code> ：显示GMT的share目录</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-plugindir</span></code> ：显示GMT的插件目录</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-modules</span></code> ：列出GMT的所有模块名</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-cores</span></code> ：显示当前计算机可以使用的核数</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">&lt;module&gt;</span> <span class="pre">=</span></code> ：检测模块 <code class="docutils literal notranslate"><span class="pre">&lt;module&gt;</span></code> 是否存在，若存在则返回0，否则返回非零值</li>
+</ul>
+</div>
+
+
+            <!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0bb569c4f33dd7e46968',
+    clientSecret: '3e8f81a18b43373c4eb24e82f34f34415f8b79be',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    body: location.href,
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+        </div></div>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div class="sphinxprev">
+    <h4>上一页</h4>
+    <p class="topless"><a href="../fitcircle/"
+                          title="上一页">&larr; fitcircle</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>下一页</h4>
+    <p class="topless"><a href="../gmt-config/"
+                          title="下一页">&rarr; gmt-config</a></p>
+  </div>
+  <h3>本页</h3>
+  <ul class="this-page-menu">
+    <li><a href="https://github.com/gmt-china/GMT_modules/blob/master/source/gmt.rst"
+           rel="nofollow">Show on GitHub</a></li>
+    <li><a href="https://github.com/gmt-china/GMT_modules/edit/master/source/gmt.rst"
+           rel="nofollow">Edit on GitHub</a></li>
+  </ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search/" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../gmt-config/" title="gmt-config"
+             >下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../fitcircle/" title="fitcircle"
+             >上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; 版权所有 2014-2018, GMT中文社区.
+      最后更新于 2019年01月05日.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2 创建。
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

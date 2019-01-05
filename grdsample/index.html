@@ -1,0 +1,256 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>grdsample &#8212; GMT模块手册</title>
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.base.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="grdseamount" href="../grdseamount/" />
+    <link rel="prev" title="grdrotater" href="../grdrotater/" />
+ 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- favicons -->
+
+<link rel="shortcut icon" href="_static/favicon.ico" type="image/x-icon" type="image/png" />
+
+<!-- Opera Speed Dial Icon -->
+<link rel="icon" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+
+<!-- Safari on iOS -->
+<link rel="apple-touch-icon" href="_static/apple-touch-icon.png"  type="image/png" />
+<link rel="apple-touch-icon" sizes="57x57" href="_static/apple-touch-icon-57x57.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="72x72" href="_static/apple-touch-icon-72x72.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="76x76" href="_static/apple-touch-icon-76x76.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="114x114" href="_static/apple-touch-icon-114x114.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="120x120" href="_static/apple-touch-icon-120x120.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="144x144" href="_static/apple-touch-icon-144x144.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="152x152" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="180x180" href="_static/apple-touch-icon-180x180.png" type="image/png" />
+
+<!-- For tiles on Windows -->
+<meta name="msapplication-TileImage" content="_static/apple-touch-icon-114x114.png"/>
+<meta name="msapplication-TileColor" content="#d83434"/>
+
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../grdseamount/" title="grdseamount"
+             accesskey="N">下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../grdrotater/" title="grdrotater"
+             accesskey="P">上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+    <div class="documentwrapper"><div class="bodywrapper">
+        <div class="body" role="main">
+            
+  <div class="section" id="grdsample">
+<span id="index-0"></span><h1>grdsample<a class="headerlink" href="#grdsample" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grdsample.html" title="(在 GMT v5.4.5)"><span>grdsample</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">对网格文件做重采样</td>
+</tr>
+</tbody>
+</table>
+<p>该命令读取一个网格文件，并对其做插值以生成一个新的网格文件。新旧网格文件的区别在于：</p>
+<ol class="arabic simple">
+<li>不同的配准方式（ <code class="docutils literal notranslate"><span class="pre">-r</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-T</span></code> ）</li>
+<li>不同的网格间隔或网格节点数（ <code class="docutils literal notranslate"><span class="pre">-I</span></code> ）</li>
+<li>不同的网格范围（ <code class="docutils literal notranslate"><span class="pre">-R</span></code> ）</li>
+</ol>
+<p>默认使用 bicubic 插值方式，可以使用 <code class="docutils literal notranslate"><span class="pre">-n</span></code> 选项设置其他插值方式。该命令可以很安全地将粗网格插值为细网格；反之，将细网格插值为粗网格时，则可能存在混淆效应，因而需要在插值前使用 <code class="docutils literal notranslate"><span class="pre">grdfft</span></code> 或 <code class="docutils literal notranslate"><span class="pre">grdfilter</span></code> 对网格文件做滤波。</p>
+<div class="section" id="id1">
+<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;in_grdfile&gt;</span></code></dt>
+<dd>要重采样的2D网格文件</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;out_grdfile&gt;</span></code></dt>
+<dd>重采样生成的网格文件</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-I&lt;xinc&gt;[&lt;unit&gt;][+e|+n]/&lt;yinc&gt;[&lt;unit&gt;][+e|+n]</span></code></dt>
+<dd><p class="first">指定X和Y方向的网格间隔</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> X方向的网格间隔</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> Y方向的网格间隔</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;unit&gt;</span></code> 网格间隔的单位。对于地理坐标系而言默认值为度，可以设置单位为
+<code class="docutils literal notranslate"><span class="pre">m|s|e|f|k|M|n|u</span></code> 。</li>
+<li><code class="docutils literal notranslate"><span class="pre">+e</span></code> 微调X和Y方向范围的最大值，使得其是网格间隔的整数倍（默认会微调网格间隔以适应给定的数据范围）</li>
+<li><code class="docutils literal notranslate"><span class="pre">+n</span></code> 表明 <code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> 不是网格间隔，而是X和Y方向的节点数。此时会根据节点数、网格区域范围以及网格配准方式重新计算网格间隔。</li>
+</ul>
+<p>注意：</p>
+<ol class="last arabic simple">
+<li>若 <code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> 设置为0，则表示其与 <code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> 相同</li>
+<li>若使用 <code class="docutils literal notranslate"><span class="pre">-R&lt;grdfile&gt;</span></code> 选项，则网格网格已经根据网格文件自动初始化，此时依然可以使用 <code class="docutils literal notranslate"><span class="pre">-I</span></code> 覆盖网格文件中的间隔值</li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-R&lt;w&gt;/&lt;e&gt;/&lt;s&gt;/&lt;n&gt;</span></code></dt>
+<dd><p class="first">指定新网格的数据范围。</p>
+<p class="last">若只使用 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项，则等效于使用 <code class="docutils literal notranslate"><span class="pre">grdcut</span></code> 或 <code class="docutils literal notranslate"><span class="pre">grdedit</span> <span class="pre">-S</span></code> 。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-T</span></code></dt>
+<dd>交换网格文件的配准方式。即若输入是网格线配准，则输出为像素点配准；若输入是像素点配准，则输出为网格线配准。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-n[b|c|l|n][+a][+b&lt;BC&gt;][+c][+t&lt;threshold&gt;]</span></code></dt>
+<dd>重采样时使用的插值算法，见 <a class="reference external" href="https://docs.gmt-china.org/option/n" title="(在 GMT v5.4.5)"><span>option-n</span></a> 一节。</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>将5x5弧分的数据采样成1x1弧分:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdsample hawaii_5by5_topo.nc -I1m -Ghawaii_1by1_topo.nc
+</pre></div>
+</div>
+<p>将网格线配准的网格文件修改为像素配准的网格文件:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdsample surface.nc -T -Gpixel.nc
+</pre></div>
+</div>
+</div>
+</div>
+
+
+            <!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0bb569c4f33dd7e46968',
+    clientSecret: '3e8f81a18b43373c4eb24e82f34f34415f8b79be',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    body: location.href,
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+        </div></div>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../">目录</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">grdsample</a><ul>
+<li><a class="reference internal" href="#id1">必选选项</a></li>
+<li><a class="reference internal" href="#id2">可选选项</a></li>
+<li><a class="reference internal" href="#id3">示例</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div class="sphinxprev">
+    <h4>上一页</h4>
+    <p class="topless"><a href="../grdrotater/"
+                          title="上一页">&larr; grdrotater</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>下一页</h4>
+    <p class="topless"><a href="../grdseamount/"
+                          title="下一页">&rarr; grdseamount</a></p>
+  </div>
+  <h3>本页</h3>
+  <ul class="this-page-menu">
+    <li><a href="https://github.com/gmt-china/GMT_modules/blob/master/source/grdsample.rst"
+           rel="nofollow">Show on GitHub</a></li>
+    <li><a href="https://github.com/gmt-china/GMT_modules/edit/master/source/grdsample.rst"
+           rel="nofollow">Edit on GitHub</a></li>
+  </ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search/" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../grdseamount/" title="grdseamount"
+             >下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../grdrotater/" title="grdrotater"
+             >上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; 版权所有 2014-2018, GMT中文社区.
+      最后更新于 2019年01月05日.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2 创建。
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

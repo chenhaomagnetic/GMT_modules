@@ -1,0 +1,271 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>grd2xyz &#8212; GMT模块手册</title>
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.base.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="grdblend" href="../grdblend/" />
+    <link rel="prev" title="grd2rgb" href="../grd2rgb/" />
+ 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- favicons -->
+
+<link rel="shortcut icon" href="_static/favicon.ico" type="image/x-icon" type="image/png" />
+
+<!-- Opera Speed Dial Icon -->
+<link rel="icon" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+
+<!-- Safari on iOS -->
+<link rel="apple-touch-icon" href="_static/apple-touch-icon.png"  type="image/png" />
+<link rel="apple-touch-icon" sizes="57x57" href="_static/apple-touch-icon-57x57.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="72x72" href="_static/apple-touch-icon-72x72.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="76x76" href="_static/apple-touch-icon-76x76.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="114x114" href="_static/apple-touch-icon-114x114.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="120x120" href="_static/apple-touch-icon-120x120.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="144x144" href="_static/apple-touch-icon-144x144.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="152x152" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="180x180" href="_static/apple-touch-icon-180x180.png" type="image/png" />
+
+<!-- For tiles on Windows -->
+<meta name="msapplication-TileImage" content="_static/apple-touch-icon-114x114.png"/>
+<meta name="msapplication-TileColor" content="#d83434"/>
+
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../grdblend/" title="grdblend"
+             accesskey="N">下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../grd2rgb/" title="grd2rgb"
+             accesskey="P">上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+    <div class="documentwrapper"><div class="bodywrapper">
+        <div class="body" role="main">
+            
+  <div class="section" id="grd2xyz">
+<span id="index-0"></span><h1>grd2xyz<a class="headerlink" href="#grd2xyz" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grd2xyz.html" title="(在 GMT v5.4.5)"><span>grd2xyz</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">将网格文件转换成表数据</td>
+</tr>
+</tbody>
+</table>
+<p>该命令读取一个或多个2D网格文件，并将XYZ数据以ASCII或二进制格式写到标准输出中。ASCII输出的格式由参数 <code class="docutils literal notranslate"><span class="pre">FORMAT_FLOAT_OUT</span></code> 控制。</p>
+<div class="section" id="id1">
+<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;grid&gt;</span></code></dt>
+<dd>要转换的2D网格文件</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-C[f|i]</span></code></dt>
+<dd><p class="first">输出的XY坐标值用对应的列、行号替代</p>
+<p>默认输出的三列数据是：X坐标、Y坐标和Z值。使用该选项，则输出的三列数据为：列号、行号和Z值。其中，行号和列号从0开始算起。</p>
+<ul class="last simple">
+<li>使用 <code class="docutils literal notranslate"><span class="pre">-Cf</span></code> 则行号和列号从1开始算起</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Ci</span></code> 会输出两列数据：索引和Z值。索引相当于是将二维数组用一维数组表示</li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-R&lt;west&gt;/&lt;east&gt;/&lt;south&gt;/&lt;north&gt;</span></code></dt>
+<dd>指定要转换的网格文件的数据范围</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-W[a|&lt;weight&gt;]</span></code></dt>
+<dd><p class="first">默认输出XYZ三列数据，使用该选项则输出四列XYZW，其中W即 <code class="docutils literal notranslate"><span class="pre">&lt;weight&gt;</span></code></p>
+<p class="last">若使用 <code class="docutils literal notranslate"><span class="pre">-Wa</span></code> 则权重为每个节点所占据的面积。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Z[flags]</span></code></dt>
+<dd><p class="first">以 ASCII 或二进制形式输出表数据</p>
+<p>使用该选项，则输出时只有Z值，没有XY信息。输出Z值的顺序由 <code class="docutils literal notranslate"><span class="pre">&lt;flags&gt;</span></code>
+决定。若是行优先， <code class="docutils literal notranslate"><span class="pre">&lt;flags&gt;</span></code> 的第一个字符可以取：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">T</span></code> 表示第一行是y=ymax</li>
+<li><code class="docutils literal notranslate"><span class="pre">B</span></code> 表示第一行是y=ynin</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;flags&gt;</span></code> 的第二个字符可以取：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">L</span></code> 表示每一行的第一个元素是x=xmin</li>
+<li><code class="docutils literal notranslate"><span class="pre">R</span></code> 表示每一行的第一个元素是x=xmax</li>
+</ul>
+<p>若是列优先，则 <code class="docutils literal notranslate"><span class="pre">L|R</span></code> 为第一个字符， <code class="docutils literal notranslate"><span class="pre">B|T</span></code> 为第二个字符。</p>
+<p>对于网格线配准的网格文件而言：</p>
+<ul class="simple">
+<li>若网格在X方向是周期的，输出数据时不需要包含x=xmax所在的列，则加上 <code class="docutils literal notranslate"><span class="pre">x</span></code></li>
+<li>若网格在Y方向是周期的，输出数据时不需要包含y=ymax所在的行，则加上 <code class="docutils literal notranslate"><span class="pre">y</span></code></li>
+</ul>
+<p>若数据需要做字节交换，则加上 <code class="docutils literal notranslate"><span class="pre">w</span></code> 。最后需要指定，数据以何种数据类型保存：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">a</span></code> ASCII表，每行输出一个Z值</li>
+<li><code class="docutils literal notranslate"><span class="pre">c</span></code> int8_t, signed 1-byte character</li>
+<li><code class="docutils literal notranslate"><span class="pre">u</span></code> uint8_t, unsigned 1-byte character</li>
+<li><code class="docutils literal notranslate"><span class="pre">h</span></code> int16_t, short 2-byte integer</li>
+<li><code class="docutils literal notranslate"><span class="pre">H</span></code> uint16_t, unsigned short 2-byte integer</li>
+<li><code class="docutils literal notranslate"><span class="pre">i</span></code> int32_t, 4-byte integer</li>
+<li><code class="docutils literal notranslate"><span class="pre">I</span></code> uint32_t, unsigned 4-byte integer</li>
+<li><code class="docutils literal notranslate"><span class="pre">l</span></code> int64_t, long (8-byte) integer</li>
+<li><code class="docutils literal notranslate"><span class="pre">L</span></code> uint64_t, unsigned long (8-byte) integer</li>
+<li><code class="docutils literal notranslate"><span class="pre">f</span></code> 4-byte floating point single precision</li>
+<li><code class="docutils literal notranslate"><span class="pre">d</span></code> 8-byte floating point double precision</li>
+</ul>
+<p class="last">默认值为 <code class="docutils literal notranslate"><span class="pre">-ZTLa</span></code> 。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grd2xyz hawaii_grv.nc &gt; hawaii_grv.xyz
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grd2xyz raw_data.nc -ZTLf &gt; hawaii_grv.b
+</pre></div>
+</div>
+</div>
+</div>
+
+
+            <!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0bb569c4f33dd7e46968',
+    clientSecret: '3e8f81a18b43373c4eb24e82f34f34415f8b79be',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    body: location.href,
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+        </div></div>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../">目录</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">grd2xyz</a><ul>
+<li><a class="reference internal" href="#id1">必选选项</a></li>
+<li><a class="reference internal" href="#id2">可选选项</a></li>
+<li><a class="reference internal" href="#id3">示例</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div class="sphinxprev">
+    <h4>上一页</h4>
+    <p class="topless"><a href="../grd2rgb/"
+                          title="上一页">&larr; grd2rgb</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>下一页</h4>
+    <p class="topless"><a href="../grdblend/"
+                          title="下一页">&rarr; grdblend</a></p>
+  </div>
+  <h3>本页</h3>
+  <ul class="this-page-menu">
+    <li><a href="https://github.com/gmt-china/GMT_modules/blob/master/source/grd2xyz.rst"
+           rel="nofollow">Show on GitHub</a></li>
+    <li><a href="https://github.com/gmt-china/GMT_modules/edit/master/source/grd2xyz.rst"
+           rel="nofollow">Edit on GitHub</a></li>
+  </ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search/" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../grdblend/" title="grdblend"
+             >下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../grd2rgb/" title="grd2rgb"
+             >上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; 版权所有 2014-2018, GMT中文社区.
+      最后更新于 2019年01月05日.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2 创建。
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

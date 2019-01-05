@@ -1,0 +1,241 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>gmtlogo &#8212; GMT模块手册</title>
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.base.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="gmtmath" href="../gmtmath/" />
+    <link rel="prev" title="gmtinfo" href="../gmtinfo/" />
+ 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- favicons -->
+
+<link rel="shortcut icon" href="_static/favicon.ico" type="image/x-icon" type="image/png" />
+
+<!-- Opera Speed Dial Icon -->
+<link rel="icon" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+
+<!-- Safari on iOS -->
+<link rel="apple-touch-icon" href="_static/apple-touch-icon.png"  type="image/png" />
+<link rel="apple-touch-icon" sizes="57x57" href="_static/apple-touch-icon-57x57.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="72x72" href="_static/apple-touch-icon-72x72.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="76x76" href="_static/apple-touch-icon-76x76.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="114x114" href="_static/apple-touch-icon-114x114.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="120x120" href="_static/apple-touch-icon-120x120.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="144x144" href="_static/apple-touch-icon-144x144.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="152x152" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="180x180" href="_static/apple-touch-icon-180x180.png" type="image/png" />
+
+<!-- For tiles on Windows -->
+<meta name="msapplication-TileImage" content="_static/apple-touch-icon-114x114.png"/>
+<meta name="msapplication-TileColor" content="#d83434"/>
+
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../gmtmath/" title="gmtmath"
+             accesskey="N">下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../gmtinfo/" title="gmtinfo"
+             accesskey="P">上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+    <div class="documentwrapper"><div class="bodywrapper">
+        <div class="body" role="main">
+            
+  <div class="section" id="gmtlogo">
+<span id="index-0"></span><h1>gmtlogo<a class="headerlink" href="#gmtlogo" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/gmtlogo.html" title="(在 GMT v5.4.5)"><span>gmtlogo</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">说明:</th><td class="field-body">在图上绘制GMT的图形logo</td>
+</tr>
+</tbody>
+</table>
+<p>该模块将GMT的图形logo绘制在图上。默认情况下，GMT的图形logo默认宽2英寸，高1英寸，将放在当前的绘图原点处。</p>
+<div class="section" id="id1">
+<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>无</p>
+</div>
+<div class="section" id="id2">
+<h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-D[g|j|J|n|x]&lt;refpoint&gt;[+w&lt;width&gt;][+j&lt;justify&gt;][+o&lt;dx&gt;[/&lt;dy&gt;]]</span></code></dt>
+<dd><p class="first">设置logo在图中的位置</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 设置底图上的参考点，见 <a class="reference external" href="https://docs.gmt-china.org/basis/embellishments" title="(在 GMT v5.4.5)"><span>embellishments</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 设置logo上的锚点，见 <a class="reference external" href="https://docs.gmt-china.org/basis/embellishments" title="(在 GMT v5.4.5)"><span>embellishments</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;[/&lt;dy&gt;]</span></code> 设置参考点的额外偏移量，见 <a class="reference external" href="https://docs.gmt-china.org/basis/embellishments" title="(在 GMT v5.4.5)"><span>embellishments</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">+w&lt;width&gt;</span></code> 设置logo的宽度</li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-F[+c&lt;clearances&gt;][+g&lt;fill&gt;][+i[[&lt;gap&gt;/]&lt;pen&gt;]][+p[&lt;pen&gt;]][+r[&lt;radius&gt;]][+s[&lt;dx&gt;/&lt;dy&gt;/][&lt;fill&gt;]]</span></code></dt>
+<dd><p class="first">在 logo 后加一个背景面板，见 <a class="reference external" href="https://docs.gmt-china.org/basis/embellishments" title="(在 GMT v5.4.5)"><span>embellishments</span></a> 一节</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">+p&lt;pen&gt;</span></code> 面板边框的画笔属性（默认画笔属性由参数 <code class="docutils literal notranslate"><span class="pre">MAP_FRAME_PEN</span></code> 决定）</li>
+<li><code class="docutils literal notranslate"><span class="pre">+g&lt;fill&gt;</span></code> 面板填充色（默认不填充颜色）</li>
+<li><code class="docutils literal notranslate"><span class="pre">+c&lt;clearances&gt;</span></code> 设置 logo 与面板边框之间空白区域的大小</li>
+<li><code class="docutils literal notranslate"><span class="pre">+i&lt;gap&gt;/&lt;pen&gt;</span></code> 为背景面板加上额外的内边框（默认的 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 值为 <code class="docutils literal notranslate"><span class="pre">2p</span></code>，内边框的画笔属性为 <code class="docutils literal notranslate"><span class="pre">MAP_DEFAULTS_PEN</span></code> ）</li>
+<li><code class="docutils literal notranslate"><span class="pre">+r&lt;radius&gt;</span></code> 面板使用圆角矩形边框（默认圆角半径为 <code class="docutils literal notranslate"><span class="pre">6p</span></code> ）</li>
+<li><code class="docutils literal notranslate"><span class="pre">+s&lt;dx&gt;/&lt;dy&gt;/&lt;fill&gt;</span></code> 为面板增加背景阴影区（默认值为 <code class="docutils literal notranslate"><span class="pre">4p/-4p/gray50</span></code> ）</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>单独绘制一个2英寸宽的GMT logo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt logo -P -Dx0/0+w2i &gt; logo.ps
+</pre></div>
+</div>
+<p>将GMT logo作为一个图层放在当前底图的左上角:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt logo -R -J -DjTR+o0.1i/0.1i+w3i -F+glightblue+s -K -O &gt;&gt; bigmap.ps
+</pre></div>
+</div>
+</div>
+</div>
+
+
+            <!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0bb569c4f33dd7e46968',
+    clientSecret: '3e8f81a18b43373c4eb24e82f34f34415f8b79be',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    body: location.href,
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+        </div></div>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../">目录</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">gmtlogo</a><ul>
+<li><a class="reference internal" href="#id1">必选选项</a></li>
+<li><a class="reference internal" href="#id2">可选选项</a></li>
+<li><a class="reference internal" href="#id3">示例</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div class="sphinxprev">
+    <h4>上一页</h4>
+    <p class="topless"><a href="../gmtinfo/"
+                          title="上一页">&larr; gmtinfo</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>下一页</h4>
+    <p class="topless"><a href="../gmtmath/"
+                          title="下一页">&rarr; gmtmath</a></p>
+  </div>
+  <h3>本页</h3>
+  <ul class="this-page-menu">
+    <li><a href="https://github.com/gmt-china/GMT_modules/blob/master/source/gmtlogo.rst"
+           rel="nofollow">Show on GitHub</a></li>
+    <li><a href="https://github.com/gmt-china/GMT_modules/edit/master/source/gmtlogo.rst"
+           rel="nofollow">Edit on GitHub</a></li>
+  </ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search/" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../gmtmath/" title="gmtmath"
+             >下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../gmtinfo/" title="gmtinfo"
+             >上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; 版权所有 2014-2018, GMT中文社区.
+      最后更新于 2019年01月05日.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2 创建。
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

@@ -1,0 +1,251 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>psclip &#8212; GMT模块手册</title>
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.base.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="pscoast" href="../pscoast/" />
+    <link rel="prev" title="psbasemap" href="../psbasemap/" />
+ 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- favicons -->
+
+<link rel="shortcut icon" href="_static/favicon.ico" type="image/x-icon" type="image/png" />
+
+<!-- Opera Speed Dial Icon -->
+<link rel="icon" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+
+<!-- Safari on iOS -->
+<link rel="apple-touch-icon" href="_static/apple-touch-icon.png"  type="image/png" />
+<link rel="apple-touch-icon" sizes="57x57" href="_static/apple-touch-icon-57x57.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="72x72" href="_static/apple-touch-icon-72x72.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="76x76" href="_static/apple-touch-icon-76x76.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="114x114" href="_static/apple-touch-icon-114x114.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="120x120" href="_static/apple-touch-icon-120x120.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="144x144" href="_static/apple-touch-icon-144x144.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="152x152" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="180x180" href="_static/apple-touch-icon-180x180.png" type="image/png" />
+
+<!-- For tiles on Windows -->
+<meta name="msapplication-TileImage" content="_static/apple-touch-icon-114x114.png"/>
+<meta name="msapplication-TileColor" content="#d83434"/>
+
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../pscoast/" title="pscoast"
+             accesskey="N">下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../psbasemap/" title="psbasemap"
+             accesskey="P">上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+    <div class="documentwrapper"><div class="bodywrapper">
+        <div class="body" role="main">
+            
+  <div class="section" id="psclip">
+<span id="index-0"></span><h1>psclip<a class="headerlink" href="#psclip" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/psclip.html" title="(在 GMT v5.4.5)"><span>psclip</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">打开或关闭多边形裁剪路径</td>
+</tr>
+</tbody>
+</table>
+<p>该模块会从输入文件中读取XY数据，由此构成一个或多个多边形，进而构建出一个或多个裁剪路径。接下来的所有绘图命令中，只有在多边形内部的部分才会被绘制。</p>
+<p>为了判断某个点是在裁剪区域内还是在裁剪区域外，psclip使用了“奇偶规则”。从任意一点绘制一条任意方向的射线，若该射线穿过裁剪路径线段奇数次，则该点位于裁剪区域内；若穿过偶数次，则该点位于裁剪区域外。</p>
+<p>最后，记得再次调用 <code class="docutils literal notranslate"><span class="pre">psclip</span> <span class="pre">-C</span></code> 以关闭裁剪区域。</p>
+<div class="section" id="id1">
+<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">-J</span></code> <code class="docutils literal notranslate"><span class="pre">-R</span></code></p>
+</div>
+<div class="section" id="id2">
+<h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-A[m|p|x|y]</span></code></dt>
+<dd><p class="first">修改两点间的连接方式，详情见 <a class="reference internal" href="../psxy/"><span class="doc">psxy</span></a> 中 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项的介绍</p>
+<p>地理投影下，两点之间默认沿着大圆弧连接。</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">-A</span></code> ：忽略当前的投影方式，直接用直线连接两点</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Am</span></code> ：先沿着经线画，再沿着纬线画</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Ap</span></code> ：先沿着纬线画，再沿着经线画</li>
+</ol>
+<p>笛卡尔坐标下，两点之间默认用直线连接。</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">-Ax</span></code> 先沿着X轴画，再沿着Y轴画</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Ay</span></code> 先沿着Y轴画，再沿着X轴画</li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-C[&lt;n&gt;]</span></code></dt>
+<dd><p class="first">结束当前裁剪路径。</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">-C</span></code>: 关闭所有裁剪路径</li>
+<li><code class="docutils literal notranslate"><span class="pre">-C&lt;n&gt;</span></code>: 仅关闭当前所有处于激活状态下的裁剪路径中的其中 <code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> 个</li>
+</ul>
+<p class="last">若在开启裁剪后有使用 <code class="docutils literal notranslate"><span class="pre">-X|-Y</span></code> 移动过坐标原点，则在关闭裁剪路径时也需要使用 <code class="docutils literal notranslate"><span class="pre">-X|-Y</span></code> 选项。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N</span></code></dt>
+<dd>反转“区域内”和“区域外”的概念，即只有在多边形外的部分才是裁剪区域，绘图时只有在多边形外的才会被绘制。该选项不能与 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项连用。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-T</span></code></dt>
+<dd>不需要任何输入数据。根据 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项将整个地图区域裁剪出来，该选项不能与
+<code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项连用。</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 打开裁剪路径</span>
+gmt psclip my_region.xy -R0/40/0/40 -Jm0.3i -K &gt; clip_mask_on.ps
+<span class="c1"># 其他绘图命令</span>
+<span class="c1"># ...</span>
+
+<span class="c1"># 关闭裁剪路径</span>
+gmt psclip -C -O &gt;&gt; complex_plot.ps
+</pre></div>
+</div>
+</div>
+</div>
+
+
+            <!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0bb569c4f33dd7e46968',
+    clientSecret: '3e8f81a18b43373c4eb24e82f34f34415f8b79be',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    body: location.href,
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+        </div></div>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../">目录</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">psclip</a><ul>
+<li><a class="reference internal" href="#id1">必选选项</a></li>
+<li><a class="reference internal" href="#id2">可选选项</a></li>
+<li><a class="reference internal" href="#id3">示例</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div class="sphinxprev">
+    <h4>上一页</h4>
+    <p class="topless"><a href="../psbasemap/"
+                          title="上一页">&larr; psbasemap</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>下一页</h4>
+    <p class="topless"><a href="../pscoast/"
+                          title="下一页">&rarr; pscoast</a></p>
+  </div>
+  <h3>本页</h3>
+  <ul class="this-page-menu">
+    <li><a href="https://github.com/gmt-china/GMT_modules/blob/master/source/psclip.rst"
+           rel="nofollow">Show on GitHub</a></li>
+    <li><a href="https://github.com/gmt-china/GMT_modules/edit/master/source/psclip.rst"
+           rel="nofollow">Edit on GitHub</a></li>
+  </ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search/" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../pscoast/" title="pscoast"
+             >下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../psbasemap/" title="psbasemap"
+             >上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; 版权所有 2014-2018, GMT中文社区.
+      最后更新于 2019年01月05日.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2 创建。
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

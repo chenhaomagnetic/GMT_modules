@@ -1,0 +1,278 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pshistogram &#8212; GMT模块手册</title>
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.base.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="psimage" href="../psimage/" />
+    <link rel="prev" title="pscoupe" href="../pscoupe/" />
+ 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- favicons -->
+
+<link rel="shortcut icon" href="_static/favicon.ico" type="image/x-icon" type="image/png" />
+
+<!-- Opera Speed Dial Icon -->
+<link rel="icon" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+
+<!-- Safari on iOS -->
+<link rel="apple-touch-icon" href="_static/apple-touch-icon.png"  type="image/png" />
+<link rel="apple-touch-icon" sizes="57x57" href="_static/apple-touch-icon-57x57.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="72x72" href="_static/apple-touch-icon-72x72.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="76x76" href="_static/apple-touch-icon-76x76.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="114x114" href="_static/apple-touch-icon-114x114.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="120x120" href="_static/apple-touch-icon-120x120.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="144x144" href="_static/apple-touch-icon-144x144.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="152x152" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="180x180" href="_static/apple-touch-icon-180x180.png" type="image/png" />
+
+<!-- For tiles on Windows -->
+<meta name="msapplication-TileImage" content="_static/apple-touch-icon-114x114.png"/>
+<meta name="msapplication-TileColor" content="#d83434"/>
+
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../psimage/" title="psimage"
+             accesskey="N">下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../pscoupe/" title="pscoupe"
+             accesskey="P">上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+    <div class="documentwrapper"><div class="bodywrapper">
+        <div class="body" role="main">
+            
+  <div class="section" id="pshistogram">
+<span id="index-0"></span><h1>pshistogram<a class="headerlink" href="#pshistogram" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/pshistogram.html" title="(在 GMT v5.4.5)"><span>pshistogram</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">统计并绘制直方图</td>
+</tr>
+</tbody>
+</table>
+<p>该命令会读取数据中的第一列，对其进行统计，并绘制直方图或累积直方图。</p>
+<div class="section" id="id1">
+<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-W&lt;bin_width&gt;[+l|h|b]</span></code></dt>
+<dd><p class="first">设置直方图计算时的bin宽度</p>
+<p><code class="docutils literal notranslate"><span class="pre">[+l|h|b]</span></code> 用于控制落在 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 范围外的数据点的处理方式。默认情况下，这些数据会被忽略</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">+b</span></code> 将落在范围外的数据包含在第一个或最后一个bin中</li>
+<li><code class="docutils literal notranslate"><span class="pre">+l</span></code> 仅将小于第一个bin的数据放在第一个bin中</li>
+<li><code class="docutils literal notranslate"><span class="pre">+h</span></code> 仅将大于最后一个bin的数据放在最后一个bin中</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-A</span></code></dt>
+<dd>绘制水平直方图，默认绘制垂直直方图</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;cpt&gt;</span></code></dt>
+<dd>指定CPT文件，将每个bar的中间值作为Z值查询CPT中的颜色</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-D[+b][+f&lt;font&gt;][+o&lt;offset&gt;][+r]</span></code></dt>
+<dd><p class="first">为每个bar添加标注，标注内容是每个bar的统计数目</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">+b</span></code> 将标注放在bar的下边（默认放在上边）</li>
+<li><code class="docutils literal notranslate"><span class="pre">+f&lt;font&gt;</span></code> 设置标注的字体</li>
+<li><code class="docutils literal notranslate"><span class="pre">+o&lt;offset&gt;</span></code> 修改bar与标注的距离（默认值为6p）</li>
+<li><code class="docutils literal notranslate"><span class="pre">+r</span></code> 将标注从水平方向旋转为垂直方向</li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-F</span></code></dt>
+<dd><p class="first">center bin on each value（默认是左边界）</p>
+<p class="last">假设数据范围是0到100，bin宽度为10。默认情况下，会将0到10作为第一个bin，10到20作为第二个bin，以此类推。若使用该选项，则第一个bin以0为中心，即0到5
+是第一个bin，5到15是第二个bin，以此类推。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;fill&gt;</span></code></dt>
+<dd>设置bar的填充色</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-I[o|O]</span></code></dt>
+<dd><p class="first">返回计算结果不绘图。</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">-I</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">xmin</span> <span class="pre">xmax</span> <span class="pre">ymin</span> <span class="pre">ymax</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">-Io</span></code> 返回bin的X和Y值</li>
+<li><code class="docutils literal notranslate"><span class="pre">-IO</span></code> 返回bin的X和Y值，即使Y=0</li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-L&lt;pen&gt;</span></code></dt>
+<dd>设置bar的边框的画笔属性</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N[&lt;mode&gt;][+p&lt;pen&gt;]</span></code></dt>
+<dd><p class="first">绘制等效的正态分布曲线</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;mode&gt;</span></code> 用于设定正态分布的中间位置及比例：</p>
+<ul class="simple">
+<li>mode=0：mean and standard deviation (default)</li>
+<li>mode=1：median and L1 scale</li>
+<li>mode=2：LMS mode and scale</li>
+</ul>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">&lt;pen&gt;</span></code> 用于指定曲线的属性。该选项可以使用多次以绘制多条曲线。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Q</span></code></dt>
+<dd>绘制累积直方图</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-S</span></code></dt>
+<dd><p class="first">绘制阶梯状直方图。</p>
+<p class="last">默认的直方图中，每个bin都用一个bar表示。使用该选项，则去除bar内部的线条。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Z[&lt;type&gt;][+w]</span></code></dt>
+<dd><p class="first">选项直方图的种类</p>
+<ul class="simple">
+<li>type=0：counts（默认值）</li>
+<li>type=1：frequency_percent</li>
+<li>type=2：log (1.0 + count)</li>
+<li>type=3：log (1.0 + frequency_percent)</li>
+<li>type=4：log10 (1.0 + count)</li>
+<li>type=5：log10 (1.0 + frequency_percent).</li>
+</ul>
+<p>若要使用第二列数据而不是count数作为权重，可以加上 <code class="docutils literal notranslate"><span class="pre">+w</span></code> 选项。</p>
+<p class="last">若需要绘制其他种类的直方图，则只能先自己对输入数据做处理再绘图。</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+            <!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0bb569c4f33dd7e46968',
+    clientSecret: '3e8f81a18b43373c4eb24e82f34f34415f8b79be',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    body: location.href,
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+        </div></div>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../">目录</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">pshistogram</a><ul>
+<li><a class="reference internal" href="#id1">必选选项</a></li>
+<li><a class="reference internal" href="#id2">可选选项</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div class="sphinxprev">
+    <h4>上一页</h4>
+    <p class="topless"><a href="../pscoupe/"
+                          title="上一页">&larr; pscoupe</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>下一页</h4>
+    <p class="topless"><a href="../psimage/"
+                          title="下一页">&rarr; psimage</a></p>
+  </div>
+  <h3>本页</h3>
+  <ul class="this-page-menu">
+    <li><a href="https://github.com/gmt-china/GMT_modules/blob/master/source/pshistogram.rst"
+           rel="nofollow">Show on GitHub</a></li>
+    <li><a href="https://github.com/gmt-china/GMT_modules/edit/master/source/pshistogram.rst"
+           rel="nofollow">Edit on GitHub</a></li>
+  </ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search/" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../psimage/" title="psimage"
+             >下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../pscoupe/" title="pscoupe"
+             >上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; 版权所有 2014-2018, GMT中文社区.
+      最后更新于 2019年01月05日.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2 创建。
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

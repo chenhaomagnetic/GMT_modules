@@ -1,0 +1,289 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pssolar &#8212; GMT模块手册</title>
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.base.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="psternary" href="../psternary/" />
+    <link rel="prev" title="pssegyz" href="../pssegyz/" />
+ 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- favicons -->
+
+<link rel="shortcut icon" href="_static/favicon.ico" type="image/x-icon" type="image/png" />
+
+<!-- Opera Speed Dial Icon -->
+<link rel="icon" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+
+<!-- Safari on iOS -->
+<link rel="apple-touch-icon" href="_static/apple-touch-icon.png"  type="image/png" />
+<link rel="apple-touch-icon" sizes="57x57" href="_static/apple-touch-icon-57x57.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="72x72" href="_static/apple-touch-icon-72x72.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="76x76" href="_static/apple-touch-icon-76x76.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="114x114" href="_static/apple-touch-icon-114x114.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="120x120" href="_static/apple-touch-icon-120x120.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="144x144" href="_static/apple-touch-icon-144x144.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="152x152" href="_static/apple-touch-icon-152x152.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="180x180" href="_static/apple-touch-icon-180x180.png" type="image/png" />
+
+<!-- For tiles on Windows -->
+<meta name="msapplication-TileImage" content="_static/apple-touch-icon-114x114.png"/>
+<meta name="msapplication-TileColor" content="#d83434"/>
+
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../psternary/" title="psternary"
+             accesskey="N">下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../pssegyz/" title="pssegyz"
+             accesskey="P">上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+    <div class="documentwrapper"><div class="bodywrapper">
+        <div class="body" role="main">
+            
+  <div class="section" id="pssolar">
+<span id="index-0"></span><h1>pssolar<a class="headerlink" href="#pssolar" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/pssolar.html" title="(在 GMT v5.4.5)"><span>pssolar</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id1">
+<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">-I</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-T</span></code> 中必须要有一个。</p>
+</div>
+<div class="section" id="id2">
+<h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-C</span></code></dt>
+<dd><p class="first">在一行内格式化打印（以Tab键分隔） <code class="docutils literal notranslate"><span class="pre">-I</span></code> 选项输出的信息。输出内容包括：</p>
+<ol class="arabic simple">
+<li>太阳的经度、纬度、方位角、高度角，单位为度</li>
+<li>日出、日落、正午的时间，单位为天</li>
+<li>日长，单位为分钟</li>
+<li>考虑折射效应矫正后的太阳高度较正以及均时差，单位为分钟</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">若没有通过 <code class="docutils literal notranslate"><span class="pre">-Ilon/lat</span></code> 提供经纬度，则太阳高度角之后的数据均以 (0,0)
+作为参考点</p>
+</div>
+<p>示例:</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt pssolar -I120/40+d2016-11-01T01:00:00+z8 -C
+<span class="m">160</span>.885755836   -14.5068940782  <span class="m">38</span>.6719503593   -59.513608404   <span class="m">0</span>.270214374769  <span class="m">0</span>.706928713211  <span class="m">0</span>.48857154399   <span class="m">628</span>.868647356   -59.5102114599  <span class="m">16</span>.4569766548
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;fill&gt;|c</span></code></dt>
+<dd>根据晨昏线对黑夜区域填充颜色或图案，见 <a class="reference external" href="https://docs.gmt-china.org/basis/fill" title="(在 GMT v5.4.5)"><span class="xref std std-ref">填充</span></a> 一节。也可以使用 <code class="docutils literal notranslate"><span class="pre">-Gc</span></code> 剪裁黑夜区域，并通过使用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psclip</span> <span class="pre">-C</span></code> 停止区域剪裁，见 <a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/psclip.html" title="(在 GMT v5.4.5)"><span>psclip</span></a> 。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-I[&lt;lon&gt;/&lt;lat&gt;][+d&lt;date&gt;][+z&lt;TZ&gt;]</span></code></dt>
+<dd><p class="first">输出太阳的当前位置、方位角和高度角。加上 <code class="docutils literal notranslate"><span class="pre">&lt;lon&gt;/&lt;lat&gt;</span></code> 则输出日出、日落、正午时间以及一天时间长度。用 <code class="docutils literal notranslate"><span class="pre">+d&lt;data&gt;</span></code> 指定ISO格式的日期时间（ 比如 <code class="docutils literal notranslate"><span class="pre">+d2000-04-25T10:00:00</span></code> ）来计算特定时刻的太阳参数。如果有需要，也可以通过 <code class="docutils literal notranslate"><span class="pre">+z&lt;TZ&gt;</span></code> 加上时区。</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt pssolar -I120/40+d2016-11-01T01:00:00+z8
+    Sun current position:    <span class="nv">long</span> <span class="o">=</span> <span class="m">160</span>.885756    <span class="nv">lat</span> <span class="o">=</span> -14.506894
+                          <span class="nv">Azimuth</span> <span class="o">=</span> <span class="m">38</span>.6720    <span class="nv">Elevation</span> <span class="o">=</span> -59.5136
+<span class="nv">Sunrise</span>  <span class="o">=</span> <span class="m">06</span>:29
+<span class="nv">Sunset</span>   <span class="o">=</span> <span class="m">16</span>:58
+<span class="nv">Noon</span>     <span class="o">=</span> <span class="m">11</span>:44
+<span class="nv">Duration</span> <span class="o">=</span> <span class="m">10</span>:29
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-M</span></code></dt>
+<dd>将晨昏线数据以多段ASCII表格式写到标准输出（或二进制格式，见 <a class="reference external" href="https://docs.gmt-china.org/option/binary" title="(在 GMT v5.4.5)"><span class="xref std std-ref">-b 选项</span></a> ）。使用该选项，则只输出数据不绘图。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N</span></code></dt>
+<dd>反转晨昏线“内”和“外”概念颠倒。仅可与 <code class="docutils literal notranslate"><span class="pre">-Gc</span></code> 一起使用以剪裁出白日区，不可与 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 一同使用。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-T&lt;dcna&gt;[+d&lt;date&gt;][+z&lt;TZ&gt;]</span></code></dt>
+<dd><p class="first">绘制一个或多个不同定义的晨昏线。若需要导出晨昏线数据，见 <code class="docutils literal notranslate"><span class="pre">-M</span></code> 选项。</p>
+<p>通过添加 <code class="docutils literal notranslate"><span class="pre">dcna</span></code> 来绘制一个或多个不同定义的晨昏线。其中，</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">d</span></code> 指晨昏线</li>
+<li><code class="docutils literal notranslate"><span class="pre">c</span></code> 指民用曙暮光</li>
+<li><code class="docutils literal notranslate"><span class="pre">n</span></code> 指航海曙暮光</li>
+<li><code class="docutils literal notranslate"><span class="pre">a</span></code> 指天文曙暮光</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">+d&lt;date&gt;</span></code> 为ISO格式的日期时间（例如 <code class="docutils literal notranslate"><span class="pre">+d2000-04-25T12:15:00</span></code> ），以得到该时刻晨昏交替的位置。如果有需要，也可以通过 <code class="docutils literal notranslate"><span class="pre">+z&lt;TZ&gt;</span></code> 加上时区。</p>
+<p>不同曙暮光区的定义如下图所示：</p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Twilight_subcategories.svg/640px-Twilight_subcategories.svg.png"><img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Twilight_subcategories.svg/640px-Twilight_subcategories.svg.png" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Twilight_subcategories.svg/640px-Twilight_subcategories.svg.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">曙暮光区的多种定义（图片来自于 <a class="reference external" href="https://en.wikipedia.org/wiki/Twilight">https://en.wikipedia.org/wiki/Twilight</a>）</span></p>
+</div>
+<ul class="simple">
+<li>民用曙暮光分为晨间曙光区和晚间暮光区：<ul>
+<li>晨间曙光区是指太阳的几何中心位于地平线以下6˚至地平线以下0˚50’（或日出，即太阳上边缘接触地平线）这段时间</li>
+<li>晚间曙光区是指太阳的几何中心位于地平线以下 0˚50’（或日落，即太阳下边缘接触地平线）至地平线以下6˚ 这段时间</li>
+</ul>
+</li>
+<li>航海曙暮光指太阳中心位于地平线以下 0˚50’ 至 12˚ 这段时间</li>
+<li>天文曙暮光指太阳中心位于地平线以下 0˚50’ 至 18˚ 这段时间</li>
+</ul>
+<p>下面的命令绘制了晨昏线以及三条曙暮光线:</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt pscoast -Rd -W0.1p -JQ0/14c -Ba -BWSen -Dl -A1000 -P -K &gt; terminator.ps
+$ gmt pssolar -R -J -W1p -Tdcna -O &gt;&gt; terminator.ps
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-W[&lt;pen&gt;]</span></code></dt>
+<dd>设置晨昏线的画笔属性，见 <a class="reference external" href="https://docs.gmt-china.org/basis/pen" title="(在 GMT v5.4.5)"><span class="xref std std-ref">画笔属性</span></a> 。</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>示例见 <a class="reference external" href="http://gmt-china.org/example/ex009/">http://gmt-china.org/example/ex009/</a></p>
+</div>
+<div class="section" id="bugs">
+<h2>BUGS<a class="headerlink" href="#bugs" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">-T+d&lt;date&gt;</span></code> 在取某些值时会段错误退出（v5.3.1）</li>
+</ol>
+</div>
+</div>
+
+
+            <!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0bb569c4f33dd7e46968',
+    clientSecret: '3e8f81a18b43373c4eb24e82f34f34415f8b79be',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    body: location.href,
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+        </div></div>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../">目录</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">pssolar</a><ul>
+<li><a class="reference internal" href="#id1">必选选项</a></li>
+<li><a class="reference internal" href="#id2">可选选项</a></li>
+<li><a class="reference internal" href="#id3">示例</a></li>
+<li><a class="reference internal" href="#bugs">BUGS</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div class="sphinxprev">
+    <h4>上一页</h4>
+    <p class="topless"><a href="../pssegyz/"
+                          title="上一页">&larr; pssegyz</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>下一页</h4>
+    <p class="topless"><a href="../psternary/"
+                          title="下一页">&rarr; psternary</a></p>
+  </div>
+  <h3>本页</h3>
+  <ul class="this-page-menu">
+    <li><a href="https://github.com/gmt-china/GMT_modules/blob/master/source/pssolar.rst"
+           rel="nofollow">Show on GitHub</a></li>
+    <li><a href="https://github.com/gmt-china/GMT_modules/edit/master/source/pssolar.rst"
+           rel="nofollow">Edit on GitHub</a></li>
+  </ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search/" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex/" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../psternary/" title="psternary"
+             >下一页</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../pssegyz/" title="pssegyz"
+             >上一页</a> &nbsp; &nbsp;</li>
+    <li><a href="../">GMT模块手册</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; 版权所有 2014-2018, GMT中文社区.
+      最后更新于 2019年01月05日.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2 创建。
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>
